@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// TODO: Move to appropriate component
+import * as data from './config/tokenabis.json';
+const jsonData = (<any>data);
+console.log(jsonData);
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
