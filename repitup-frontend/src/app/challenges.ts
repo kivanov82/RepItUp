@@ -2,7 +2,7 @@ import { Challenge } from './challenge';
 
 export const CHALLENGES: Challenge[] = [
   { 
-    title: "Lorem ipsum dolor amet bicycle rights glossier", 
+    title: "Lorem ipsum dolor amet", 
     subtitle: 'Hoestraat 10, Den Haag', 
     squareMeters: "300", 
     image: "http://placehold.it/250x120",
@@ -16,7 +16,7 @@ export const CHALLENGES: Challenge[] = [
     by: "Nick Muller"
   },
   { 
-    title: "Tote bag labore pork belly 3 wolf moon", 
+    title: "Tote bag labore pork ", 
     subtitle: 'Sparkstraats 20, Groningen', 
     squareMeters: "12", 
     image: "http://placehold.it/250x120",
