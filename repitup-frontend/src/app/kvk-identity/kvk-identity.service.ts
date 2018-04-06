@@ -2,7 +2,7 @@ import { ElementRef, Injectable } from '@angular/core';
 
 @Injectable()
 export class KvkIdentityService {
-  private widgetPromise: Promise<Object>;
+  private widgetPromise: Promise<Kvk>;
 
   constructor(private secret: string, loadWidget: Function) {
     this.widgetPromise = loadWidget();

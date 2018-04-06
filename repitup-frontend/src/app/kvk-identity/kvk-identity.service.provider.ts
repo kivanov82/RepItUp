@@ -1,6 +1,10 @@
 import { environment } from '../../environments/environment';
 import { KvkIdentityService } from './kvk-identity.service';
 
+declare global {
+  interface Window { kvk: Kvk; }
+}
+
 function loadWidget() {
   return new Promise((resolve, reject) => {
     const url = 'https://widget.mayersoftwaredevelopment.nl/kvk-identity-qr.js';
