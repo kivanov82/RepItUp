@@ -1,3 +1,15 @@
 <h1 class="mat-display-1">
   Main component
 </h1>
+
+<div *ngIf="isMunicipality">
+  <app-municipality></app-municipality>
+</div>
+
+<div *ngIf="isEntrepreneur">
+  <app-entrepreneur></app-entrepreneur>
+</div>
+
+<div *ngIf="isCivil">
+  <app-civil></app-civil>
+</div>

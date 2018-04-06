@@ -8,9 +8,18 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 })
 export class MainComponent implements OnInit {
 
+  // Component Visibility
+  public isCivil;
+  public isMunicipality;
+  public isEntrepreneur;
+  
   constructor() { }
 
   ngOnInit() {
+    // TODO: Set booleans from a auth
+    this.isCivil = true;
+    this.isMunicipality = true;
+    this.isEntrepreneur = true;
   }
 
 }
