@@ -14,8 +14,12 @@ import { EntrepreneurComponent } from './entrepreneur/entrepreneur.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { KvkIdentityWidgetComponent } from './kvk-identity-widget/kvk-identity-widget.component';
+import { ActivityDialogComponent } from './activity-dialog/activity-dialog.component';
 
 @NgModule({
   declarations: [
@@ -24,15 +28,20 @@ import { KvkIdentityWidgetComponent } from './kvk-identity-widget/kvk-identity-w
     MunicipalityComponent,
     CivilComponent,
     EntrepreneurComponent,
-    KvkIdentityWidgetComponent
+    KvkIdentityWidgetComponent,
+    ActivityDialogComponent
   ],
   imports: [
     BrowserModule,
     MatCardModule,
     MatGridListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatButtonModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
-  providers: [],
+  entryComponents: [ActivityDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
