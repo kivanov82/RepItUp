@@ -10,7 +10,7 @@ import { MainComponent } from './main/main.component';
 import { MunicipalityComponent } from './municipality/municipality.component';
 import { CivilComponent } from './civil/civil.component';
 import { EntrepreneurComponent } from './entrepreneur/entrepreneur.component';
-
+import { KvkIdentityWidgetComponent } from './kvk-identity-widget/kvk-identity-widget.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import { EntrepreneurComponent } from './entrepreneur/entrepreneur.component';
     MainComponent,
     MunicipalityComponent,
     CivilComponent,
-    EntrepreneurComponent
+    EntrepreneurComponent,
+    KvkIdentityWidgetComponent
   ],
   imports: [
     BrowserModule
