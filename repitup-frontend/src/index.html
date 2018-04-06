@@ -7,28 +7,12 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src='http://widget.mayersoftwaredevelopment.nl/kvk-identity-qr.js'></script>
 
   <script src="const.js"></script>
   <script src="tokenabi.js"></script>
 
   <script>
     function start() {
-      var $widget = document.getElementsByClassName('kvk-identity-qr')[0];
-      $widget.onAgree = function (sessionKey, data) {
-        //TODO go futher
-        //This is auth component that will be on a backend in reality
-        console.log('Attest: ', data.attest);
-      };
-      $widget.onReject = function () {
-        console.log('User rejected');
-      };
-      $widget.onError = function (error) {
-        console.log('error: ', error)
-      }
-
-
       //token (web3) init
       SimpleToken = web3.eth.contract(abi);
       simpleTokenInstance = SimpleToken.at(tokenAddress);
@@ -52,12 +36,9 @@
         });
       }
     }
-
   </script>
-
 </head>
 <body onload="start()">
-<div class="kvk-identity-qr" data-questionid="5ac387b080e8f5210f92f174" data-secret="6f57be0d538757bb7a3343a9aa4e62023ec4aa86"></div>
   <app-root></app-root>
 </body>
 </html>
