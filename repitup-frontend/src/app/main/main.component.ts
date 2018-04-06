@@ -16,7 +16,6 @@ export class MainComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // TODO: Set booleans from a auth
     this.isCivil = true;
     this.isMunicipality = true;
     this.isEntrepreneur = true;
