@@ -10,6 +10,9 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src='http://widget.mayersoftwaredevelopment.nl/kvk-identity-qr.js'></script>
 
+  <script src="const.js"></script>
+  <script src="tokenabi.js"></script>
+
   <script>
     function start() {
       var $widget = document.getElementsByClassName('kvk-identity-qr')[0];
@@ -23,6 +26,30 @@
       };
       $widget.onError = function (error) {
         console.log('error: ', error)
+      }
+
+
+      //token (web3) init
+      SimpleToken = web3.eth.contract(abi);
+      simpleTokenInstance = SimpleToken.at(tokenAddress);
+
+      //this is how to get balance
+      function getBalance() {
+        simpleTokenInstance.balanceOf(event, function (err, result) {
+          JSON.stringify(result.c[0]);
+        });
+      }
+
+      //this is how to transfer
+      function transfer() {
+        var transferAddress = event;
+        simpleTokenInstance.transfer(transferAddress, 25, function (err, result) {
+          if (result) {
+            //do nothing
+          } else {
+            console.error(error);
+          }
+        });
       }
     }
 
