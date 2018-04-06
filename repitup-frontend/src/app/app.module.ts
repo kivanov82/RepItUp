@@ -11,6 +11,10 @@ import { MunicipalityComponent } from './municipality/municipality.component';
 import { CivilComponent } from './civil/civil.component';
 import { EntrepreneurComponent } from './entrepreneur/entrepreneur.component';
 
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDividerModule } from '@angular/material/divider';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +25,10 @@ import { EntrepreneurComponent } from './entrepreneur/entrepreneur.component';
     EntrepreneurComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MatCardModule,
+    MatGridListModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
