@@ -10,12 +10,7 @@ import java.math.BigDecimal;
  */
 @Entity
 @Table(name = "transaction")
-public class Transaction {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id;
+public class Transaction extends DataBaseObject {
 
     String message;
 

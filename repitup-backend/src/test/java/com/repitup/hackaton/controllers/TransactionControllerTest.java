@@ -10,7 +10,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -18,7 +17,6 @@ import java.util.List;
 
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Matchers.any;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -47,7 +45,7 @@ public class TransactionControllerTest {
         Transaction transaction = new Transaction("message", BigDecimal.ONE, "amanda");
         List<Transaction> transactions = Arrays.asList(transaction);
         given(transactionRepository.findByRecipient("amanda")).willReturn(transactions);
-        mvc.perform(get("/getTransactions.json").param("recipient", "amanda")
+        mvc.perform(get("/transaction/getTransactions.json").param("recipient", "amanda")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))

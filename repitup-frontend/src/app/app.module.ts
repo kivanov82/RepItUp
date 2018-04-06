@@ -15,6 +15,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDividerModule } from '@angular/material/divider';
 
+import { KvkIdentityWidgetComponent } from './kvk-identity-widget/kvk-identity-widget.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MainComponent,
     MunicipalityComponent,
     CivilComponent,
-    EntrepreneurComponent
+    EntrepreneurComponent,
+    KvkIdentityWidgetComponent
   ],
   imports: [
     BrowserModule,
