@@ -5,7 +5,6 @@ import { KvkIdentityServiceProvider } from '../kvk-identity/kvk-identity.service
 @Component({
   selector: 'app-kvk-identity-widget',
   templateUrl: './kvk-identity-widget.component.html',
-  styleUrls: ['./kvk-identity-widget.component.css'],
   providers: [KvkIdentityServiceProvider]
 })
 export class KvkIdentityWidgetComponent implements AfterViewInit {
