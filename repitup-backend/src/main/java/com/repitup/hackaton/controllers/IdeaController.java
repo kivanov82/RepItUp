@@ -1,14 +1,14 @@
 package com.repitup.hackaton.controllers;
 
+import java.util.List;
+
 import com.repitup.hackaton.model.Idea;
-import com.repitup.hackaton.model.Transaction;
 import com.repitup.hackaton.repository.IdeaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -24,7 +24,7 @@ public class IdeaController {
 
 
     @RequestMapping(value = "/get.json", method = RequestMethod.GET)
-    public Idea getIdea(Idea idea) {
+    public Idea getIdea(@RequestParam Idea idea) {
         return idea;
     }
 
@@ -34,7 +34,7 @@ public class IdeaController {
     }
 
     @RequestMapping(value = "/save.json", method = RequestMethod.POST)
-    public void saveIdea(String description) {
+    public void saveIdea(@RequestParam String description) {
         Idea idea = new Idea(description);
         ideaRepository.save(idea);
     }
