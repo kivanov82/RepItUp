@@ -15,7 +15,7 @@ export class MainComponent implements OnInit {
   constructor(public auth: AuthService) { }
 
   ngOnInit() {
-    this.isCivil = true;
+    this.isCivil = false;
     this.isMunicipality = false;
     this.isEntrepreneur = false;
   }

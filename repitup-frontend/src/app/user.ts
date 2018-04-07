@@ -4,6 +4,14 @@ export class User {
     public companyName: string
   ) {}
 
+  isEntrepeneur() {
+    return this.companyName === 'New School Furniture';
+  }
+
+  isMunicipal() {
+    return this.companyName === 'Bruisende Binnenstad';
+  }
+
   toJSON() {
     return {
       sessionKey: this.sessionKey,
