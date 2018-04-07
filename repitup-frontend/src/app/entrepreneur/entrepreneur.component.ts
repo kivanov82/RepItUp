@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { CHALLENGES } from '../challenges';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ActivityDialogComponent } from '../activity-dialog/activity-dialog.component';
-
+import { AuthService } from '../auth.service';
 import { FeasibilityTrackComponent } from '../feasibility-track/feasibility-track.component';
 
 @Component({
@@ -15,7 +15,7 @@ export class EntrepreneurComponent implements OnInit {
 
   challenges = CHALLENGES;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, public auth: AuthService) {  }
 
   openDialog(): void {
     let dialogRef = this.dialog.open(ActivityDialogComponent, {
