@@ -18,7 +18,7 @@ export class EntrepreneurComponent implements OnInit {
 
   openDialog(): void {
     let dialogRef = this.dialog.open(ActivityDialogComponent, {
-      width: '420px',
+      width: '500px',
       data: { data: "test" }
     });
 
