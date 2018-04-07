@@ -18,9 +18,9 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.isCivil = true;
+    this.isCivil = false;
     this.isMunicipality = false;
-    this.isEntrepreneur = false;
+    this.isEntrepreneur = true;
 
     this.auth.authUpdate.subscribe(() => {
       this.zone.run(() => {

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import * as Web3 from 'web3';
 
+import { AppSettings } from './config/AppSettings';
+
 declare let require: any;
 declare let window: any;
 
@@ -13,7 +15,7 @@ export class ContractsService {
   private _web3: any;
 
   private _tokenContract: any;
-  private _tokenContractAddress: string = "0x627306090abab3a6e1400e9345bc60c78a8bef57";
+  private _tokenContractAddress: string = AppSettings.TOKEN_ADDRESS;
 
   constructor() {
 

@@ -3,6 +3,7 @@ import { CHALLENGES } from '../challenges';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ActivityDialogComponent } from '../activity-dialog/activity-dialog.component';
 
+import { FeasibilityTrackComponent } from '../feasibility-track/feasibility-track.component';
 
 @Component({
   selector: 'app-entrepreneur',

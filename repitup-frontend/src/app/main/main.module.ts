@@ -11,7 +11,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
-
+import { FeasibilityTrackModule } from '../feasibility-track/feasibility-track.module';
 
 @NgModule({
   imports: [
@@ -28,7 +28,8 @@ import { MatInputModule } from '@angular/material/input';
     BrowserAnimationsModule,
     MatDialogModule,
     MatInputModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    FeasibilityTrackModule
   ],
   exports:[
     BrowserAnimationsModule,
@@ -43,8 +44,11 @@ import { MatInputModule } from '@angular/material/input';
     BrowserAnimationsModule,
     MatDialogModule,
     MatInputModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    FeasibilityTrackModule
   ],
-  declarations: []
+  declarations: [
+    
+  ]
 })
 export class MainModule { }

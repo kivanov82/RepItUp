@@ -9,19 +9,17 @@ import { CivilComponent } from './civil/civil.component';
 import { CivilIdeaComponent } from './civil/civil-idea.component';
 import { CivilVoteFormComponent } from './civil/civil-vote-form.component';
 import { EntrepreneurComponent } from './entrepreneur/entrepreneur.component';
-
 import { KvkIdentityWidgetComponent } from './kvk-identity-widget/kvk-identity-widget.component';
 import { ActivityDialogComponent } from './activity-dialog/activity-dialog.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
-
 import { ideaServiceProvider } from './idea.service.provider';
 import { AuthService } from './auth.service';
 import { LoginComponent } from './login/login.component';
-
 import { MainModule } from "./main/main.module";
+import { EntrepreneurModule } from "./entrepreneur/entrepreneur.module";
 import { NavbarComponent } from './navbar/navbar.component';
-
 import { ContractsService } from './contracts.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +38,9 @@ import { ContractsService } from './contracts.service';
     BrowserModule,
     HttpClientModule,
     FlexLayoutModule,
-    MainModule
+    MainModule,
+    EntrepreneurModule
+    
   ],
   providers: [
     AuthService,
