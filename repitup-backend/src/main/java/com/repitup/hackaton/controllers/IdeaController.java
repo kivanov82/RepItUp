@@ -31,9 +31,8 @@ public class IdeaController {
         return (List<Idea>) ideaRepository.findAll();
     }
 
-    @RequestMapping(value = "/save/{description}", method = RequestMethod.POST)
-    public void saveIdea(@PathVariable String description) {
-        Idea idea = new Idea(description);
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    public void saveIdea(@RequestBody  Idea idea) {
         ideaRepository.save(idea);
     }
 
