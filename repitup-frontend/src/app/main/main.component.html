@@ -1,17 +1,32 @@
-<div *ngIf="!authenticated; else content">
-  <app-login></app-login>
+<div class="container"
+  *ngIf="!authenticated; else content"
+  fxLayout="row"
+  fxLayout.xs="column"
+  fxLayoutAlign="center"
+  fxLayoutGap="10px"
+  fxLayoutGap.xs="0">
+  <div class="item item-1" fxFlex="100">
+    <app-login></app-login>
+  </div>
 </div>
 
 <ng-template #content>
-  <div *ngIf="isMunicipality">
-    <app-municipality></app-municipality>
-  </div>
+  <div class="container"
+    fxLayout="row"
+    fxLayout.xs="column"
+    fxLayoutAlign="center"
+    fxLayoutGap="10px"
+    fxLayoutGap.xs="0">
+    <div *ngIf="isMunicipality" class="item item-1" fxFlex="100">
+      <app-municipality></app-municipality>
+    </div>
 
-  <div *ngIf="isEntrepreneur">
-    <app-entrepreneur></app-entrepreneur>
-  </div>
+    <div *ngIf="isEntrepreneur" class="item item-2" fxFlex="100">
+      <app-entrepreneur></app-entrepreneur>
+    </div>
 
-  <div *ngIf="isCivil">
-    <app-civil></app-civil>
+    <div *ngIf="isCivil" class="item item-3" fxFlex="100">
+      <app-civil></app-civil>
+    </div>
   </div>
 </ng-template>

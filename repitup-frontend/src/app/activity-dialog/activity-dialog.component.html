@@ -1,21 +1,58 @@
-<div>
-
-  <form>
-    <h3 class="dialog-header">Share your idea for: Vacancy challenge Groningen</h3>
-    <mat-form-field style="width:100%">
+<h3>Share your idea for: Vacancy challenge Groningen</h3>
+<div fxLayout="row" 
+  fxLayout.xs="column"
+  fxLayoutAlign="center"
+  fxLayoutGap="10px"
+  fxLayoutGap.xs="0" style="width:100%" cellspacing="0">
+    <mat-form-field fxFlex="100">
       <textarea matInput matTextareaAutosize matAutosizeMinRows="2"
       matAutosizeMaxRows="5" placeholder="Describe your idea"></textarea>
-    </mat-form-field>
+    </mat-form-field >
+  </div>
 
-    <h3>What do you need?</h3>
-    <section class="dialog-section">
-      <mat-grid-list cols="2" rowHeight="40px">
-        <mat-grid-tile
-            *ngFor="let checkbox of checkboxes"
-            [colspan]="1">
-            <mat-checkbox class="dialog-checkbox">{{ checkbox.value }}</mat-checkbox>    
-        </mat-grid-tile>
-      </mat-grid-list>
-    </section>
-  </form>
-</div>
+
+  <div fxLayout="row" 
+    fxLayout.xs="column"
+    fxLayoutAlign="center"
+    fxLayoutGap="10px"
+    fxLayoutGap.xs="0">
+
+    <h3 fxFlex="100">What do you need?</h3>
+  </div>
+  <div fxLayout="row" 
+    fxLayout.xs="column"
+    fxLayoutAlign="center"
+    fxLayoutGap="10px"
+    fxLayoutGap.xs="0">
+    
+    
+    <div fxFlex="50" fxFlex.sm="100">
+      <div *ngFor="let checkbox of checkboxes">
+          <div fxLayout="row" 
+          fxLayout.xs="column"
+          fxLayoutAlign="center"
+          fxLayoutGap="10px"
+          fxLayoutGap.xs="0">
+        <mat-checkbox fxFlex="50" fxFlex.sm="100" class="dialog-checkbox">{{ checkbox.value }}</mat-checkbox>
+
+        </div>
+      </div>
+    </div>
+    <mat-form-field fxFlex="50" fxFlex.sm="100">
+    <textarea matInput matTextareaAutosize matAutosizeMinRows="2"
+      matAutosizeMaxRows="5" placeholder="Other"></textarea>
+    </mat-form-field>
+    
+    </div>
+
+    <div fxLayout="row" 
+      fxLayout.xs="column"
+      fxLayoutAlign="center"
+      fxLayoutGap="10px"
+      fxLayoutGap.xs="0" style="width:100%" >
+
+      <mat-divider></mat-divider>
+      <button mat-button color="primary">Invite for feedback</button>
+      <button mat-button color="accent">Send for review</button>
+
+      </div>

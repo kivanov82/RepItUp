@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { CHALLENGES } from '../challenges';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ActivityDialogComponent } from '../activity-dialog/activity-dialog.component';
 
 
@@ -18,7 +18,7 @@ export class EntrepreneurComponent implements OnInit {
 
   openDialog(): void {
     let dialogRef = this.dialog.open(ActivityDialogComponent, {
-      width: '420px',
+      width: '500px',
       data: { data: "test" }
     });
 
