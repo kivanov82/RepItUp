@@ -1,0 +1,100 @@
+.feasibility-card {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.feasibility-content {
+  flex-grow: 1;
+}
+
+.feasibility-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  flex-shrink: 0;
+
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 1px solid #ccc;
+}
+
+.risk {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #e7e7e7;
+  border-radius: 50px;
+  line-height: 100px;
+  text-align: center;
+  font-size: 1.17em;
+  font-weight: bold;
+}
+
+.requirements-list {
+  list-style-type: none;
+}
+
+.requirements-list-item {
+  margin: 15px 0;
+}
+
+.messages-list {
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.messages-list-item {
+  margin: 20px 0;
+}
+
+.messages-list-item-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.message {
+  width: 60%;
+}
+
+.columns {
+  display: flex;
+}
+
+.column {
+  width: 50%;
+}
+
+.message-mine {
+  background-color: #F0F0F0;
+}
+
+.message-someone-else {
+  background-color: #F0F0F0;
+}
+
+.fa-bullseye, .fa-star {
+  color: #FBCE0F;
+}
+
+.example-header-image {
+  background-image: url('https://www.loyensloeff.com/favicon.ico');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #fff;
+}
+
+.street {
+  margin: 0;
+}
+
+.progress-bar {
+  margin: 20px 0;
+}
+
+.review-status {
+  margin: 20px 0;
+  color: #27B119;
+  text-align: center;
+}

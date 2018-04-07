@@ -1,17 +1,37 @@
-<div>
+<div *ngIf="!popupRedirect">
   <div *ngIf="loading; else ideas">loading</div>
   <ng-template #ideas>
     <div class="civil-ideas">
       <app-civil-idea
         *ngIf="idea"
+        [name]="idea.name"
         [description]="idea.description"
+         submitter="New School Furniture"
         [numTokens]="100"
         [userBalance]="5"
-        ></app-civil-idea>
+        (showFeasibility)="popupRedirect = true"></app-civil-idea>
 
-      <app-civil-idea [description]="mockDescription" ></app-civil-idea>
-      <app-civil-idea [description]="mockDescription" ></app-civil-idea>
+      <app-civil-idea
+        description="Our believe is we are a perfect fit for this local shopping street. We want to offer high quality, custom made leather shoes
+        with unique patterns and designs. We only bring quality to this street and want to use the building to start our own custom
+        shoe service. Vote for us and walk on clouds!"
+        image="assets/idea-placeholder-1.png"
+        name="YouFoot shoe shop"
+        submitter="YouFoot"
+        (showFeasibility)="popupRedirect = true"></app-civil-idea>
+      <app-civil-idea
+        description="Pizzaria Mario by: Chef Mario We had a great succes with our 4 minute pizza concept the past year and now we want to extend
+        this by opening another restaurant. Try out both familiar and exotic pizza recipes, all served within 4 minutes. We also
+        serve vegan pizza’s so everyone can join us for a healthy meal and a good time."
+        image="assets/idea-placeholder-2.png"
+        name="Pizzaria Mario"
+        submitter="Chef Mario"
+        (showFeasibility)="popupRedirect = true"></app-civil-idea>
     </div>
     
   </ng-template>
+</div>
+
+<div *ngIf="popupRedirect">
+  <app-feasibility-track></app-feasibility-track>
 </div>

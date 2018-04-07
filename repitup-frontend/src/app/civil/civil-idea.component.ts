@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ContractsService } from '../contracts.service';
 import { BigNumber } from 'bignumber.js';
 
@@ -7,12 +7,17 @@ import { BigNumber } from 'bignumber.js';
   templateUrl: './civil-idea.component.html',
   styleUrls: ['./civil-idea.component.css'],
 })
-export class CivilIdeaComponent implements OnInit {
+export class CivilIdeaComponent {
 
   @Input() id: Number = 0;
   @Input() description: Number;
   @Input() numTokens: Number = 0;
   @Input() userBalance: Number = 0;
+  @Input() image: String = 'assets/challenge-placeholder.png';
+  @Input() name: String = '';
+  @Input() submitter: String = '';
+
+  @Output() showFeasibility = new EventEmitter();
 
   private balance:number;
     get bar():number {
