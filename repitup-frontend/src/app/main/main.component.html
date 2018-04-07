@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 
 <div class="container"
-  *ngIf="!authenticated; else content"
+  *ngIf="!auth.isAuthenticated(); else content"
   fxLayout="row"
   fxLayout.xs="column"
   fxLayoutAlign="center"

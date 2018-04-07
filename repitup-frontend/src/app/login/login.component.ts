@@ -13,4 +13,9 @@ export class LoginComponent {
 
   constructor(public auth: AuthService) { }
 
+  handleAgree({ sessionKey, data }) {
+    const companyName = data.attest[0].value;
+    this.auth.authenticate({ sessionKey, companyName });
+  }
+
 }
