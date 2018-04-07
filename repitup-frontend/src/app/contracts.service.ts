@@ -23,11 +23,11 @@ export class ContractsService {
       // Use Mist/MetaMask's provider
       this._web3 = new Web3(window.web3.currentProvider);
 
-      if (this._web3.version.network !== '4') {
-        alert('Please connect to the Rinkeby network');
+      if (this._web3.version.network !== '5777') {
+        alert('Please connect to the ETH (Ganache) network');
       }
     } else {
-      console.warn(
+      alert(
         'Please use a dapp browser like mist or MetaMask plugin for chrome'
       );
     }
@@ -43,7 +43,7 @@ export class ContractsService {
             alert('There was an error fetching your accounts.');
             return;
           }
-  
+
           if (accs.length === 0) {
             alert(
               'Couldn\'t get any accounts! Make sure your Ethereum client is configured correctly.'
@@ -53,23 +53,23 @@ export class ContractsService {
           resolve(accs[0]);
         })
       }) as string;
-  
+
       this._web3.eth.defaultAccount = this._account;
     }
-  
+
     return Promise.resolve(this._account);
   }
 
   public async getUserBalance(): Promise<number> {
     let account = await this.getAccount();
-  
+
     return new Promise((resolve, reject) => {
       let _web3 = this._web3;
       this._tokenContract.balanceOf.call(account, function (err, result) {
         if(err != null) {
           reject(err);
         }
-  
+
         resolve(_web3.fromWei(result));
       });
     }) as Promise<number>;
@@ -77,7 +77,7 @@ export class ContractsService {
 
   public async sendFunds(address, amount): Promise<boolean> {
     let account = await this.getAccount();
-    
+
     return new Promise((resolve, reject) => {
       let _web3 = this._web3;
 
@@ -85,7 +85,7 @@ export class ContractsService {
         if(err != null) {
           reject(err);
         }
-        
+
         resolve(_web3.fromWei(result));
       });
     }) as Promise<boolean>;

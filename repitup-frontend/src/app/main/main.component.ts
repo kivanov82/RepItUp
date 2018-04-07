@@ -1,4 +1,4 @@
-import { Component, NgZone, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -6,27 +6,19 @@ import { AuthService } from '../auth.service';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
 })
-export class MainComponent implements OnInit {
+export class MainComponent {
 
   public authenticated = false;
   public isCivil;
   public isMunicipality;
   public isEntrepreneur;
 
-  constructor(private zone: NgZone, public auth: AuthService) {
-    this.authenticated = this.auth.isAuthenticated();
-  }
-
   ngOnInit() {
     this.isCivil = false;
     this.isMunicipality = false;
     this.isEntrepreneur = true;
 
-    this.auth.authUpdate.subscribe(() => {
-      this.zone.run(() => {
-        this.authenticated = this.auth.isAuthenticated();
-      });
-    })
   }
 
+  constructor(public auth: AuthService) { }
 }

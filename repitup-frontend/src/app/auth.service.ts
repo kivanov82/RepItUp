@@ -1,32 +1,35 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
+import { User } from './user';
 
 declare global {
   interface Window { auth: any }
 }
 
-const storageKey = 'app-auth';
+const storageKey = 'app-auth-user';
 
 @Injectable()
 export class AuthService {
 
   @Output() authUpdate = new EventEmitter();
-  private authenticated: boolean = false;
+  user: User;
 
   constructor() {
     this.load();
     window.auth = this;
   }
 
-  setAuthenticated(authenticated: boolean) {
-    this.authenticated = authenticated;
+  authenticate({ sessionKey, companyName }) {
+    this.user = new User(sessionKey, companyName);
     this.persist();
-    this.authUpdate.emit({
-      authenticated: this.authenticated
-    });
   }
 
-  isAuthenticated() {
-    return this.authenticated;
+  logout() {
+    this.user = null;
+    this.persist();
+  }
+
+  isAuthenticated(): boolean {
+    return Boolean(this.user);
   }
 
   private load() {
@@ -36,14 +39,19 @@ export class AuthService {
       return;
     }
 
-    const { authenticated } = JSON.parse(json);
-    this.authenticated = authenticated;
+    try {
+      this.user = User.fromJSON(json);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   private persist() {
-    window.localStorage.setItem(storageKey, JSON.stringify({
-      authenticated: this.authenticated
-    }));
+    if (!this.user) {
+      window.localStorage.removeItem(storageKey);
+    } else {
+      window.localStorage.setItem(storageKey, JSON.stringify(this.user));
+    }
   }
 
 }

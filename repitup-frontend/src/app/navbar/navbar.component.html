@@ -3,5 +3,5 @@
   <button
     mat-button
     *ngIf="this.auth.isAuthenticated()"
-    (click)="this.auth.setAuthenticated(false)">Logout</button>
+    (click)="this.auth.logout()">Logout</button>
 </nav>

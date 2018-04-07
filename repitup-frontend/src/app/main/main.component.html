@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 
 <div class="container"
-  *ngIf="!authenticated; else content"
+  *ngIf="!auth.isAuthenticated(); else content"
   fxLayout="row"
   fxLayout.xs="column"
   fxLayoutAlign="center"
@@ -19,15 +19,15 @@
     fxLayoutAlign="center"
     fxLayoutGap="10px"
     fxLayoutGap.xs="0">
-    <div *ngIf="isMunicipality" class="item item-1" fxFlex="100">
+    <div *ngIf="auth.user.isMunicipal()" class="item item-1" fxFlex="100">
       <app-municipality></app-municipality>
     </div>
 
-    <div *ngIf="isEntrepreneur" class="item item-2" fxFlex="100">
+    <div *ngIf="auth.user.isEntrepeneur()" class="item item-2" fxFlex="100">
       <app-entrepreneur></app-entrepreneur>
     </div>
 
-    <div *ngIf="isCivil" class="item item-3" fxFlex="100">
+    <div *ngIf="auth.user.isCivilian()" class="item item-3" fxFlex="100">
       <app-civil></app-civil>
     </div>
   </div>
