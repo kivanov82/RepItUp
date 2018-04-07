@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { MunicipalityComponent } from './municipality/municipality.component';
 import { CivilComponent } from './civil/civil.component';
+import { CivilChallengeComponent } from './civil/civil-challenge.component';
 import { CivilVoteFormComponent } from './civil/civil-vote-form.component';
 import { EntrepreneurComponent } from './entrepreneur/entrepreneur.component';
 
@@ -31,6 +32,7 @@ import { ActivityDialogComponent } from './activity-dialog/activity-dialog.compo
     MainComponent,
     MunicipalityComponent,
     CivilComponent,
+    CivilChallengeComponent,
     CivilVoteFormComponent,
     EntrepreneurComponent,
     KvkIdentityWidgetComponent,
