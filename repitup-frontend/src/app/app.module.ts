@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import * as data from './config/tokenabis.json';
 const jsonData = (<any>data);
@@ -25,6 +26,7 @@ import { MatInputModule } from '@angular/material/input';
 
 import { KvkIdentityWidgetComponent } from './kvk-identity-widget/kvk-identity-widget.component';
 import { ActivityDialogComponent } from './activity-dialog/activity-dialog.component';
+import { ideaServiceProvider } from './idea.service.provider';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,7 @@ import { ActivityDialogComponent } from './activity-dialog/activity-dialog.compo
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     FormsModule,
     MatButtonModule,
     MatCardModule,
@@ -53,6 +56,7 @@ import { ActivityDialogComponent } from './activity-dialog/activity-dialog.compo
     MatDialogModule,
     MatInputModule
   ],
+  providers: [ideaServiceProvider],
   entryComponents: [ActivityDialogComponent],
   bootstrap: [AppComponent]
 })

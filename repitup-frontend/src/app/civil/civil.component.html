@@ -1,9 +1,15 @@
-<div class="civil-challenges">
-  <app-civil-challenge
-    [description]="mockDescription"
-    [numTokens]="100"
-    [userBalance]="5"></app-civil-challenge>
+<div>
+  <div *ngIf="loading; else ideas">loading</div>
+  <ng-template #ideas>
+    <div class="civil-ideas">
+      <app-civil-challenge
+        [id]="idea.id"
+        [description]="idea.description"
+        [numTokens]="100"
+        [userBalance]="5"></app-civil-challenge>
 
-  <app-civil-challenge [description]="mockDescription"></app-civil-challenge>
-  <app-civil-challenge [description]="mockDescription"></app-civil-challenge>
+      <app-civil-challenge [description]="mockDescription"></app-civil-challenge>
+      <app-civil-challenge [description]="mockDescription"></app-civil-challenge>
+    </div>
+  </ng-template>
 </div>
