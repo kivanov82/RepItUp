@@ -19,7 +19,7 @@ body {
   flex: 1 1 calc(33% - 10px);
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 901px) {
   .item {
     flex: 1 1 calc(25% - 10px)
   }
