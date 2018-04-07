@@ -12,7 +12,6 @@ export class CivilComponent implements OnInit {
 
   loading: boolean = true;
   idea: object = {
-    id: 0,
     description: ''
   };
 
