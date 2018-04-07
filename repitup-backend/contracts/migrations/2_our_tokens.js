@@ -6,6 +6,7 @@ module.exports = function(deployer) {
 
     deployer.deploy(VotingToken);
     VotingToken.deployed().then(function(instance) {
+        instance.transfer.call(accounts[1], 587);
         return instance.transfer.call(accounts[2], 4);
     })
 };
