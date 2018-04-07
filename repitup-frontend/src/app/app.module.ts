@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { MunicipalityComponent } from './municipality/municipality.component';
 import { CivilComponent } from './civil/civil.component';
-import { CivilChallengeComponent } from './civil/civil-challenge.component';
+import { CivilIdeaComponent } from './civil/civil-idea.component';
 import { CivilVoteFormComponent } from './civil/civil-vote-form.component';
 import { EntrepreneurComponent } from './entrepreneur/entrepreneur.component';
 
@@ -34,7 +34,7 @@ import { ideaServiceProvider } from './idea.service.provider';
     MainComponent,
     MunicipalityComponent,
     CivilComponent,
-    CivilChallengeComponent,
+    CivilIdeaComponent,
     CivilVoteFormComponent,
     EntrepreneurComponent,
     KvkIdentityWidgetComponent,

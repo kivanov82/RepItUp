@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-civil-challenge',
-  templateUrl: './civil-challenge.component.html',
-  styleUrls: ['./civil-challenge.component.css'],
+  selector: 'app-civil-idea',
+  templateUrl: './civil-idea.component.html',
+  styleUrls: ['./civil-idea.component.css'],
 })
-export class CivilChallengeComponent {
+export class CivilIdeaComponent {
 
   @Input() id: Number;
   @Input() description: Number;

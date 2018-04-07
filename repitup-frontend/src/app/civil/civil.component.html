@@ -2,14 +2,14 @@
   <div *ngIf="loading; else ideas">loading</div>
   <ng-template #ideas>
     <div class="civil-ideas">
-      <app-civil-challenge
+      <app-civil-idea
         [id]="idea.id"
         [description]="idea.description"
         [numTokens]="100"
-        [userBalance]="5"></app-civil-challenge>
+        [userBalance]="5"></app-civil-idea>
 
-      <app-civil-challenge [description]="mockDescription"></app-civil-challenge>
-      <app-civil-challenge [description]="mockDescription"></app-civil-challenge>
+      <app-civil-idea [description]="mockDescription"></app-civil-idea>
+      <app-civil-idea [description]="mockDescription"></app-civil-idea>
     </div>
   </ng-template>
 </div>

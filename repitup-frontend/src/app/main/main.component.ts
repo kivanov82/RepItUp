@@ -19,9 +19,9 @@ export class MainComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.isCivil = false;
+    this.isCivil = true;
     this.isMunicipality = false;
-    this.isEntrepreneur = true;
+    this.isEntrepreneur = false;
   }
 
 }
