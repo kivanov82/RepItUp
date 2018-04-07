@@ -1,14 +1,12 @@
 package com.repitup.hackaton.controllers;
 
-import java.util.List;
-
 import com.repitup.hackaton.model.Idea;
+import com.repitup.hackaton.model.Transaction;
 import com.repitup.hackaton.repository.IdeaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,18 +21,18 @@ public class IdeaController {
     private IdeaRepository ideaRepository;
 
 
-    @RequestMapping(value = "/get.json", method = RequestMethod.GET)
-    public Idea getIdea(@RequestParam Idea idea) {
+    @RequestMapping(value = "/{idea}", method = RequestMethod.GET)
+    public Idea getIdea(@PathVariable Idea idea) {
         return idea;
     }
 
-    @RequestMapping(value = "/getAll.json", method = RequestMethod.GET)
+    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     public List<Idea> findAll() {
         return (List<Idea>) ideaRepository.findAll();
     }
 
-    @RequestMapping(value = "/save.json", method = RequestMethod.POST)
-    public void saveIdea(@RequestParam String description) {
+    @RequestMapping(value = "/save/{description}", method = RequestMethod.POST)
+    public void saveIdea(@PathVariable String description) {
         Idea idea = new Idea(description);
         ideaRepository.save(idea);
     }
