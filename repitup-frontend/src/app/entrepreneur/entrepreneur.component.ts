@@ -14,6 +14,7 @@ import { FeasibilityTrackComponent } from '../feasibility-track/feasibility-trac
 export class EntrepreneurComponent implements OnInit {
 
   challenges = CHALLENGES;
+  popupRedirect = false;
 
   constructor(public dialog: MatDialog, public auth: AuthService) { console.log(auth.user.isMunicipal()); }
 
@@ -25,6 +26,7 @@ export class EntrepreneurComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+      this.popupRedirect = true;
     });
   }
 
