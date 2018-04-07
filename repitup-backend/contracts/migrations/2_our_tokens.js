@@ -1,6 +1,7 @@
 var SimpleToken = artifacts.require("./SimpleToken.sol");
 var VotingToken = artifacts.require("./SimpleToken.sol");
 var municipality = "0x627306090abaB3A6e1400e9345bC60c78a8BEf57";
+var entrepreneur = "0xf17f52151EbEF6C7334FAD080c5704D77216b732";
 var civilian = "0xC5fdf4076b8F3A5357c5E395ab970B5B54098Fef";
 
 module.exports = function(deployer) {
@@ -10,7 +11,7 @@ module.exports = function(deployer) {
 
     VotingToken.new().then(function(instance) {
         console.log('Voting Token:' + instance.address);
-        instance.transfer(municipality, 587);
+        instance.transfer(entrepreneur, 587);
         return instance.transfer(civilian, 4);
     }).catch(function(err) {
         // There was an error! Handle it.
