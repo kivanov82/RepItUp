@@ -4,6 +4,10 @@ export class User {
     public companyName: string
   ) {}
 
+  isCivilian() {
+    return this.companyName === 'Civilian';
+  }
+
   isEntrepeneur() {
     return this.companyName === 'New School Furniture';
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -6,18 +6,8 @@ import { AuthService } from '../auth.service';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
 })
-export class MainComponent implements OnInit {
-
-  public isCivil;
-  public isMunicipality;
-  public isEntrepreneur;
+export class MainComponent {
 
   constructor(public auth: AuthService) { }
-
-  ngOnInit() {
-    this.isCivil = false;
-    this.isMunicipality = false;
-    this.isEntrepreneur = false;
-  }
 
 }
