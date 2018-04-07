@@ -10,3 +10,7 @@
 .navbar-spacer {
   flex-grow: 1;
 }
+
+.navbar-item {
+  margin: 10px;
+}
