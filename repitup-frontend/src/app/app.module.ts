@@ -24,6 +24,7 @@ import { MatInputModule } from '@angular/material/input';
 
 import { KvkIdentityWidgetComponent } from './kvk-identity-widget/kvk-identity-widget.component';
 import { ActivityDialogComponent } from './activity-dialog/activity-dialog.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { ActivityDialogComponent } from './activity-dialog/activity-dialog.compo
     MatDialogModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    MatCheckboxModule
   ],
   entryComponents: [ActivityDialogComponent],
   bootstrap: [AppComponent]
