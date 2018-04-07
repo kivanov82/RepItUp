@@ -1,6 +1,5 @@
 package com.repitup.hackaton.model;
 
-import javafx.scene.chart.PieChart;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
