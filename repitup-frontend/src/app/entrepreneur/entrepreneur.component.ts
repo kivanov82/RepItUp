@@ -3,6 +3,7 @@ import { CHALLENGES } from '../challenges';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { ActivityDialogComponent } from '../activity-dialog/activity-dialog.component';
 
+
 @Component({
   selector: 'app-entrepreneur',
   templateUrl: './entrepreneur.component.html',
@@ -17,7 +18,7 @@ export class EntrepreneurComponent implements OnInit {
 
   openDialog(): void {
     let dialogRef = this.dialog.open(ActivityDialogComponent, {
-      width: '250px',
+      width: '420px',
       data: { data: "test" }
     });
 

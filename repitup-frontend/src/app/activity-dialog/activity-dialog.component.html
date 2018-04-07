@@ -1,3 +1,21 @@
-<p>
-  activity-dialog works!
-</p>
+<div>
+
+  <form>
+    <h3 class="dialog-header">Share your idea for: Vacancy challenge Groningen</h3>
+    <mat-form-field style="width:100%">
+      <textarea matInput matTextareaAutosize matAutosizeMinRows="2"
+      matAutosizeMaxRows="5" placeholder="Describe your idea"></textarea>
+    </mat-form-field>
+
+    <h3>What do you need?</h3>
+    <section class="dialog-section">
+      <mat-grid-list cols="2" rowHeight="40px">
+        <mat-grid-tile
+            *ngFor="let checkbox of checkboxes"
+            [colspan]="1">
+            <mat-checkbox class="dialog-checkbox">{{ checkbox.value }}</mat-checkbox>    
+        </mat-grid-tile>
+      </mat-grid-list>
+    </section>
+  </form>
+</div>
