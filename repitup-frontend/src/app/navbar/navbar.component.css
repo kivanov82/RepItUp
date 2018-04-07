@@ -18,3 +18,18 @@
 .navbar-kvk-icon {
   vertical-align: middle;
 }
+
+.navbar-user-data {
+  margin: 0 30px;
+}
+
+.navbar-user-data-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.navbar-user-data-list-item {
+  margin: 0 15px;
+}
