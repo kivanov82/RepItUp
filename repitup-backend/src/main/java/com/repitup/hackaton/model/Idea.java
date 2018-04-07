@@ -18,8 +18,17 @@ public class Idea extends DataBaseObject {
 
     private String name;
 
+    private String assumption;
+
     @OneToMany(cascade = CascadeType.ALL)
     Set<Need> needs = new HashSet<>();
+
+    public Idea(String description, String name, String assumption, Set<Need> needs) {
+        this.description = description;
+        this.name = name;
+        this.assumption = assumption;
+        this.needs = needs;
+    }
 
     //Hiberante
     protected Idea() {
@@ -42,5 +51,9 @@ public class Idea extends DataBaseObject {
 
     public String getName() {
         return name;
+    }
+
+    public String getAssumption() {
+        return assumption;
     }
 }
