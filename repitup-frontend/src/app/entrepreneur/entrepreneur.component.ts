@@ -15,7 +15,7 @@ export class EntrepreneurComponent implements OnInit {
 
   challenges = CHALLENGES;
 
-  constructor(public dialog: MatDialog, public auth: AuthService) {  }
+  constructor(public dialog: MatDialog, public auth: AuthService) { console.log(auth.user.isMunicipal()); }
 
   openDialog(): void {
     let dialogRef = this.dialog.open(ActivityDialogComponent, {
