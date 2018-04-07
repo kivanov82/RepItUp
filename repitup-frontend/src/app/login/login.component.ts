@@ -20,7 +20,7 @@ export class LoginComponent {
 
   loginAsCivilian() {
     this.auth.authenticate({
-      sessionKey: 'civ',
+      sessionKey: 'fake-session',
       companyName: 'Civilian'
     });
   }

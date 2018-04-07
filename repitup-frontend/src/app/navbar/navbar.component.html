@@ -1,7 +1,20 @@
 <nav class="navbar">
   <div class="navbar-spacer"></div>
-  <button
-    mat-button
-    *ngIf="this.auth.isAuthenticated()"
-    (click)="this.auth.logout()">Logout</button>
+  <div class="navbar-item"
+      *ngIf="auth.isAuthenticated()">
+
+    <i *ngIf="auth.user.sessionKey === 'fake-session'" class="fas fa-user-circle"></i>
+    <img
+      *ngIf="auth.user.sessionKey !== 'fake-session'"
+      src="assets/kvk-id-logo.png"
+      width="60"
+      class="navbar-kvk-icon">
+
+    {{ auth.user.companyName }}
+  </div>
+
+  <div class="navbar-item"
+      *ngIf="auth.isAuthenticated()">
+    <button mat-button (click)="auth.logout()">Logout</button>
+  </div>
 </nav>

@@ -2,5 +2,6 @@
 @import url('//fonts.googleapis.com/css?family=Roboto|Material+Icons');
 
 body {
+  margin: 0;
   font-family: 'Roboto', sans-serif;
 }
