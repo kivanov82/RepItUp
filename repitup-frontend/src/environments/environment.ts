@@ -6,8 +6,8 @@
 export const environment = {
   production: false,
   kvk: {
-    questionId: '5ac8c3dc80e8f5210f92f2a6',
-    secret: '6f57be0d538757bb7a3343a9aa4e62023ec4aa86',
+    questionId: '5ac8ddea80e8f5210f92f2e5',
+    secret: 'e9f8913b7847257e325c7aed047a477944a9d3cf',
   },
   apiUrl: 'http://10.0.169.251:8080'
 };
