@@ -8,6 +8,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.HashSet;
+
 import static org.junit.Assert.*;
 
 /**
@@ -27,7 +29,7 @@ public class IdeaRepositoryTest {
 
     @Test
     public void testIdeaSave() {
-        Idea idea = new Idea("description");
+        Idea idea = new Idea("description", new HashSet<>());
         entityManager.persist(idea);
         entityManager.flush();
         Idea one = ideaRepository.findOne(1L);

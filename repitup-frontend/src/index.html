@@ -12,7 +12,6 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
   <script src="const.js"></script>
-  <script src="tokenabi.js"></script>
 
   <script>
     function start() {
@@ -22,7 +21,7 @@
 
       //this is how to get balance
       function getBalance() {
-        simpleTokenInstance.balanceOf(event, function (err, result) {
+        simpleTokenInstance.balanceOf(entrepreneur, function (err, result) {
           JSON.stringify(result.c[0]);
         });
       }

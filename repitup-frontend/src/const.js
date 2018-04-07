@@ -1,4 +1,6 @@
-const tokenAddress = '0x8f0483125fcb9aaaefa9209d8e9d7b9c8b9fb90f';
+const tokenAddress = '0x8065f4c7b8c2bf53561af92d9da2ea022a0b28ca';
+const votingTokenAddress = '0x4a5cd58b24e3bf04360b06bfeaf45a39aa8035b6';
+const ratingAddress = '0xcb152a2aa90055a0d255ca7dbaeb85edfdc86096';
 
 
 const municipality = '0x627306090abaB3A6e1400e9345bC60c78a8BEf57';
