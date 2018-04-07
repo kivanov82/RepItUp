@@ -2,7 +2,15 @@
   <div class="navbar-spacer"></div>
   <div class="navbar-item"
       *ngIf="auth.isAuthenticated()">
-    Logged in as: {{ auth.user.companyName }}
+
+    <i *ngIf="auth.user.sessionKey === 'fake-session'" class="fas fa-user-circle"></i>
+    <img
+      *ngIf="auth.user.sessionKey !== 'fake-session'"
+      src="assets/kvk-id-logo.png"
+      width="60"
+      class="navbar-kvk-icon">
+
+    {{ auth.user.companyName }}
   </div>
 
   <div class="navbar-item"
