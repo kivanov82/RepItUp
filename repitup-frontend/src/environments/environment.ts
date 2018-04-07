@@ -9,4 +9,5 @@ export const environment = {
     questionId: '5ac387b080e8f5210f92f174',
     secret: '6f57be0d538757bb7a3343a9aa4e62023ec4aa86',
   },
+  apiUrl: 'http://10.0.169.251:8080'
 };

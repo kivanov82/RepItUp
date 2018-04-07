@@ -1,0 +1,13 @@
+<mat-card class="civil-idea">
+  <img mat-card-image width="430" height="208px" src="http://placehold.it/430x208">
+  <mat-card-header>
+    <mat-card-title>Vacancy idea</mat-card-title>
+    <mat-card-subtitle>Oosterstraat 55 Groningen</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ description }}</p>
+    <h2>{{ numTokens }} tokens support for this idea</h2>
+    <h3>Your balance: {{ userBalance }}</h3>
+    <app-civil-vote-form></app-civil-vote-form>
+  </mat-card-content>
+</mat-card>
