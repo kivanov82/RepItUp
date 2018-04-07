@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IdeaService } from '../idea.service';
+import { ContractsService } from '../contracts.service';
 
 @Component({
   selector: 'app-civil',

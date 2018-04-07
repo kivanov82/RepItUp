@@ -15,7 +15,7 @@ export class ContractsService {
   private _web3: any;
 
   private _tokenContract: any;
-  private _tokenContractAddress: string = AppSettings.TOKEN_ADDRESS;
+  private _tokenContractAddress: string = AppSettings.VOTING_TOKEN_ADDRESS;
 
   constructor() {
 
@@ -65,26 +65,35 @@ export class ContractsService {
 
     return new Promise((resolve, reject) => {
       let _web3 = this._web3;
-      this._tokenContract.balanceOf.call(account, function (err, result) {
+      this._tokenContract.balanceOf.call(AppSettings.CIVILIAN, function (err, result) {
         if(err != null) {
           reject(err);
         }
-
+        // console.log(result);
         resolve(_web3.fromWei(result));
       });
     }) as Promise<number>;
   }
 
-  public async sendFunds(address, amount): Promise<boolean> {
+  
+
+  public async sendFunds(amount): Promise<boolean> {
     let account = await this.getAccount();
 
     return new Promise((resolve, reject) => {
       let _web3 = this._web3;
 
-      this._tokenContract.transfer.call(account, amount,function (err, result) {
+      this._tokenContract.transfer.call(
+        AppSettings.CIVILIAN, 
+        amount, 
+
+        function (err, result) {
+        console.log("sendFunds::err -> "+err);
         if(err != null) {
           reject(err);
         }
+        
+        console.log("sendFunds::result -> "+result);
 
         resolve(_web3.fromWei(result));
       });

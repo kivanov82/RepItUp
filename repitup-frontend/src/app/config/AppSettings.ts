@@ -1,7 +1,7 @@
 export class AppSettings {
   public static API_ENDPOINT='http://52.212.219.105:8080/';
 
-  public static TOKEN_ADDRESS='0x82d50ad3c1091866e258fd0f1a7cc9674609d254';
+  public static REWARDING_TOKEN_ADDRESS='0x82d50ad3c1091866e258fd0f1a7cc9674609d254';
   public static VOTING_TOKEN_ADDRESS='0xdda6327139485221633a1fcd65f4ac932e60a2e1';
   public static REPUTATION_ADDRESS='0xeec918d74c746167564401103096d45bbd494b74';
 
