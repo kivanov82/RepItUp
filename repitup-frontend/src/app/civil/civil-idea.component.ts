@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class CivilIdeaComponent {
 
-  @Input() id: Number;
+  @Input() id: Number = 0;
   @Input() description: Number;
   @Input() numTokens: Number = 0;
   @Input() userBalance: Number = 0;

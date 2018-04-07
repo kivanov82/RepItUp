@@ -1,7 +1,7 @@
 pragma solidity ^0.4.18;
 // We have to specify what version of compiler this code will compile with
 
-contract Rating {
+contract Reputation {
     /* mapping field below is equivalent to an associative array or hash.
     The key of the mapping is candidate name stored as type bytes32 and value is
     an unsigned integer to store the vote count
@@ -19,7 +19,7 @@ contract Rating {
     deploy the contract to the blockchain. When we deploy the contract,
     we will pass an array of candidates who will be contesting in the election
     */
-    function Rating(bytes32[] candidateNames) public {
+    function Reputation(bytes32[] candidateNames) public {
         candidateList = candidateNames;
     }
 

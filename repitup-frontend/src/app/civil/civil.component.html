@@ -3,7 +3,7 @@
   <ng-template #ideas>
     <div class="civil-ideas">
       <app-civil-idea
-        [id]="idea.id"
+        *ngIf="idea"
         [description]="idea.description"
         [numTokens]="100"
         [userBalance]="5"></app-civil-idea>

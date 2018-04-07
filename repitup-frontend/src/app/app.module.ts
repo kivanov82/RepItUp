@@ -15,8 +15,11 @@ import { ActivityDialogComponent } from './activity-dialog/activity-dialog.compo
 import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { ideaServiceProvider } from './idea.service.provider';
+import { AuthService } from './auth.service';
+import { LoginComponent } from './login/login.component';
 
 import { MainModule } from "./main/main.module";
+import { NavbarComponent } from './navbar/navbar.component';
 
 import { ContractsService } from './contracts.service';
 @NgModule({
@@ -29,7 +32,9 @@ import { ContractsService } from './contracts.service';
     CivilVoteFormComponent,
     EntrepreneurComponent,
     KvkIdentityWidgetComponent,
-    ActivityDialogComponent
+    ActivityDialogComponent,
+    LoginComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +43,7 @@ import { ContractsService } from './contracts.service';
     MainModule
   ],
   providers: [
+    AuthService,
     ideaServiceProvider,
     ContractsService 
   ],
