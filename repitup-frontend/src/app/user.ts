@@ -1,4 +1,8 @@
 export class User {
+  votingPower =  5;
+  rewards = 2;
+  reputation = 9;
+
   constructor(
     public sessionKey: string,
     public companyName: string

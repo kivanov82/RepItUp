@@ -1,5 +1,15 @@
 <nav class="navbar">
   <div class="navbar-spacer"></div>
+
+  <div class="navbar-user-data"
+    *ngIf="auth.isAuthenticated() && auth.user.sessionKey === 'fake-session'">
+    <ul class="navbar-user-data-list">
+      <li class="navbar-user-data-list-item">Voting power: {{ auth.user.votingPower }}</li>
+      <li class="navbar-user-data-list-item">Rewards: {{ auth.user.rewards }} tokens</li>
+      <li class="navbar-user-data-list-item">Reputation: {{ auth.user.reputation }}</li>
+    </ul>
+  </div>
+
   <div class="navbar-item"
       *ngIf="auth.isAuthenticated()">
 
