@@ -1,39 +1,37 @@
-<div class="content" 
-  fxLayout="row" 
-  fxLayout.xs="column" 
-  fxFlexFill >
-  <div *ngFor="let challenge of challenges" fxFlex="auto" fxFlex.sm="50" fxFlex.xs="50" >
-    <mat-card>  
-        <img mat-card-image class="" src="{{ challenge.image }}" alt="{{ challenge.title }}">
-        <mat-card-header>
-          <mat-card-title-group>
-            <mat-card-title class="card-title">{{ challenge.title }}<br/> <span class="card-title-address"><i class="fas fa-map-marker-alt text-red"></i> {{ challenge.subtitle }}</span></mat-card-title>
-            <mat-card-subtitle>by <strong>{{ challenge.by }}</strong></mat-card-subtitle>
-          </mat-card-title-group>
-        </mat-card-header>
-        <mat-divider></mat-divider>
-        <mat-card-content>
-          
-          <div class="content" 
-            fxLayout="row" 
-            fxLayoutAlign="center"
-            fxLayout.sm="column" 
-            fxFlexFill >
-            <p fxFlex="50" style="text-align:center"><i class="fas fa-object-group fa-lg"></i> {{ challenge.squareMeters }} m<sup>2</sup></p>
-            <p fxFlex="50" style="text-align:center"><i class="fas fa-cubes fa-lg"></i> Building year: 2006</p>
-          </div>
-
+<div class="container">
+  <div *ngFor="let challenge of challenges" class="item">
+      <mat-card>  
+          <img mat-card-image class="" src="{{ challenge.image }}" alt="{{ challenge.title }}">
+          <mat-card-header>
+            <mat-card-title-group>
+              <mat-card-title class="card-title">{{ challenge.title }}<br/> <span class="card-title-address"><i class="fas fa-map-marker-alt text-red"></i> {{ challenge.subtitle }}</span></mat-card-title>
+              <mat-card-subtitle>by <strong>{{ challenge.by }}</strong></mat-card-subtitle>
+            </mat-card-title-group>
+          </mat-card-header>
           <mat-divider></mat-divider>
-          <p>
-              Lorem ipsum dolor amet selvage messenger bag twee woke salvia man braid banjo. Typewriter gluten-free live-edge, paleo vinyl kickstarter humblebrag cronut leggings cornhole. Ramps hoodie seitan gochujang letterpress blog you probably haven't heard of them tbh shaman four dollar toast adaptogen live-edge literally. Meditation +1 chillwave, viral asymmetrical bushwick hoodie. Tousled synth whatever mixtape tattooed chia.
-          </p>
-        </mat-card-content>
-        
-        <mat-card-actions>
-          <div class="button-row">
-              <button mat-button color="accent" (click)="openDialog()">Open Popup</button>
-          </div>
-        </mat-card-actions>
-      </mat-card>
-    </div>
+          <mat-card-content>
+            
+            <div class="content" 
+              fxLayout="row" 
+              fxLayoutAlign="center"
+              fxLayout.sm="column" 
+              fxFlexFill >
+              <p fxFlex="50" style="text-align:center"><i class="fas fa-object-group fa-lg"></i> {{ challenge.squareMeters }} m<sup>2</sup></p>
+              <p fxFlex="50" style="text-align:center"><i class="fas fa-cubes fa-lg"></i> Building year: 2006</p>
+            </div>
+  
+            <mat-divider></mat-divider>
+            <p>
+                Lorem ipsum dolor amet selvage messenger bag twee woke salvia man braid banjo. Typewriter gluten-free live-edge, paleo vinyl kickstarter humblebrag cronut leggings cornhole. Ramps hoodie seitan gochujang letterpress blog you probably haven't heard of them tbh shaman four dollar toast adaptogen live-edge literally. Meditation +1 chillwave, viral asymmetrical bushwick hoodie. Tousled synth whatever mixtape tattooed chia.
+            </p>
+          </mat-card-content>
+          
+          <mat-card-actions>
+            <div class="button-row">
+                <button mat-button color="accent" (click)="openDialog()">Open Popup</button>
+            </div>
+          </mat-card-actions>
+        </mat-card>
+  </div>
 </div>
+

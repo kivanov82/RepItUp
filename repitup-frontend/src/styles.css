@@ -5,3 +5,40 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
 }
+
+.container {
+  margin: 20px auto;
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.item {
+  margin: 10px;
+  flex: 1 1 calc(33% - 10px);
+}
+
+@media screen and (max-width: 1200px) {
+  .item {
+    flex: 1 1 calc(25% - 10px)
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .item {
+    flex: 1 1 calc(33% - 10px)
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .item {
+    flex: 1 1 calc(50% - 10px)
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .item {
+    flex: 1 1 calc(100% - 10px)
+  }
+}
