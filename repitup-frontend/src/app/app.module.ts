@@ -9,18 +9,21 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { MunicipalityComponent } from './municipality/municipality.component';
 import { CivilComponent } from './civil/civil.component';
+import { CivilVoteFormComponent } from './civil/civil-vote-form.component';
 import { EntrepreneurComponent } from './entrepreneur/entrepreneur.component';
 
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
 
 import { KvkIdentityWidgetComponent } from './kvk-identity-widget/kvk-identity-widget.component';
 import { ActivityDialogComponent } from './activity-dialog/activity-dialog.component';
-import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
@@ -29,13 +32,18 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MainComponent,
     MunicipalityComponent,
     CivilComponent,
+    CivilVoteFormComponent,
     EntrepreneurComponent,
     KvkIdentityWidgetComponent,
     ActivityDialogComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    MatButtonModule,
     MatCardModule,
+    MatFormFieldModule,
     MatGridListModule,
     MatDividerModule,
     MatButtonModule,
