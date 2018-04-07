@@ -19,6 +19,8 @@ public class Idea extends DataBaseObject {
 
     private String description;
 
+    private String name;
+
     @OneToMany(cascade = CascadeType.ALL)
     Set<Need> needs = new HashSet<>();
 
@@ -27,8 +29,9 @@ public class Idea extends DataBaseObject {
 
     }
 
-    public Idea(String description, Set<Need> needs) {
+    public Idea(String description, String name, Set<Need> needs) {
         this.description = description;
+        this.name = name;
         this.needs = needs;
     }
 
@@ -38,5 +41,9 @@ public class Idea extends DataBaseObject {
 
     public Set<Need> getNeeds() {
         return needs;
+    }
+
+    public String getName() {
+        return name;
     }
 }

@@ -29,7 +29,7 @@ public class IdeaRepositoryTest {
 
     @Test
     public void testIdeaSave() {
-        Idea idea = new Idea("description", new HashSet<>());
+        Idea idea = new Idea("description", "name" , new HashSet<>());
         entityManager.persist(idea);
         entityManager.flush();
         Idea one = ideaRepository.findOne(1L);
