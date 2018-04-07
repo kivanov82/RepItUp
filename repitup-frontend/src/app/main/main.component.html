@@ -27,7 +27,7 @@
       <app-entrepreneur></app-entrepreneur>
     </div>
 
-    <div *ngIf="isCivil" class="item item-3" fxFlex="100">
+    <div *ngIf="auth.user.isCivilian()" class="item item-3" fxFlex="100">
       <app-civil></app-civil>
     </div>
   </div>

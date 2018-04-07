@@ -18,4 +18,11 @@ export class LoginComponent {
     this.auth.authenticate({ sessionKey, companyName });
   }
 
+  loginAsCivilian() {
+    this.auth.authenticate({
+      sessionKey: 'civ',
+      companyName: 'Civilian'
+    });
+  }
+
 }

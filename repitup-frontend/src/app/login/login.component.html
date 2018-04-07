@@ -1,3 +1,12 @@
-<app-kvk-identity-widget
-  [questionId]="questionId"
-  (onAgree)="handleAgree($event)"></app-kvk-identity-widget>
+<div class="login">
+  <app-kvk-identity-widget
+    [questionId]="questionId"
+    (onAgree)="handleAgree($event)"></app-kvk-identity-widget>
+
+  <p>or</p>
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="loginAsCivilian()">Login as civilian</button>
+</div>
