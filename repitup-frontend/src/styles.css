@@ -4,7 +4,3 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
-body:after {
-  font-family: 'Material Icons';
-  content: 'star';
-} 

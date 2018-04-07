@@ -13,34 +13,8 @@
 
   <script src="const.js"></script>
 
-  <script>
-    function start() {
-      //token (web3) init
-      SimpleToken = web3.eth.contract(abi);
-      simpleTokenInstance = SimpleToken.at(tokenAddress);
-
-      //this is how to get balance
-      function getBalance() {
-        simpleTokenInstance.balanceOf(entrepreneur, function (err, result) {
-          JSON.stringify(result.c[0]);
-        });
-      }
-
-      //this is how to transfer
-      function transfer() {
-        var transferAddress = event;
-        simpleTokenInstance.transfer(transferAddress, 25, function (err, result) {
-          if (result) {
-            //do nothing
-          } else {
-            console.error(error);
-          }
-        });
-      }
-    }
-  </script>
 </head>
-<body onload="start()">
+<body>
   <app-root></app-root>
 </body>
 </html>

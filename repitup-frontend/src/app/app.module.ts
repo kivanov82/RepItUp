@@ -2,10 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-import * as data from './config/tokenabis.json';
-const jsonData = (<any>data);
-console.log(jsonData);
-
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { MunicipalityComponent } from './municipality/municipality.component';
@@ -22,6 +18,7 @@ import { ideaServiceProvider } from './idea.service.provider';
 
 import { MainModule } from "./main/main.module";
 
+import { ContractsService } from './contracts.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +37,10 @@ import { MainModule } from "./main/main.module";
     FlexLayoutModule,
     MainModule
   ],
-  providers: [ideaServiceProvider],
+  providers: [
+    ideaServiceProvider,
+    ContractsService 
+  ],
   entryComponents: [ActivityDialogComponent],
   bootstrap: [AppComponent]
 })
