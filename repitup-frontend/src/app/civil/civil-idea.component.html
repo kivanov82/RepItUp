@@ -1,17 +1,18 @@
 <mat-card class="civil-idea">
-    <img mat-card-image width="430" height="208px" src="assets/challenge-placeholder.png">
-    <mat-card-header>
-      <mat-card-title>Vacancy idea</mat-card-title>
-      <mat-card-subtitle>Oosterstraat 55 Groningen</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <p>{{ description }}</p>
-      <div class="actions">
-        <button mat-button color="primary" (click)="showFeasibility.emit()">read more</button>
-      </div>
+  <img mat-card-image width="430" height="208px" src="{{ image }}" class="image">
+  <mat-card-header>
+    <mat-card-title>{{ name }}</mat-card-title>
+    <mat-card-subtitle>Voorstreek 55, Leeuwarden</mat-card-subtitle>
+    <mat-card-subtitle>by: {{ submitter }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ description }}</p>
+    <div class="actions">
+      <button mat-button color="primary" (click)="showFeasibility.emit()">read more</button>
+    </div>
 
-      <h2>{{ numTokens }} tokens support for this idea</h2>
-      <h3>Your balance: {{ userBalance }}</h3>
-      <app-civil-vote-form></app-civil-vote-form>
-    </mat-card-content>
-  </mat-card>
+    <h2>{{ numTokens }} tokens support for this idea</h2>
+    <h3>Your balance: {{ userBalance }}</h3>
+    <app-civil-vote-form></app-civil-vote-form>
+  </mat-card-content>
+</mat-card>

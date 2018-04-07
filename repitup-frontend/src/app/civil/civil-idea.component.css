@@ -7,3 +7,7 @@
   display: flex;
   justify-content: center;
 }
+
+.image {
+  object-fit: cover;
+}

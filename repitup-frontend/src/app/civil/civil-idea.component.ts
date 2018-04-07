@@ -11,6 +11,9 @@ export class CivilIdeaComponent {
   @Input() description: Number;
   @Input() numTokens: Number = 0;
   @Input() userBalance: Number = 0;
+  @Input() image: String = 'assets/challenge-placeholder.png';
+  @Input() name: String = '';
+  @Input() submitter: String = '';
 
   @Output() showFeasibility = new EventEmitter();
 
