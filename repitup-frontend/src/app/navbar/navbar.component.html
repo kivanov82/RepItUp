@@ -1,0 +1,7 @@
+<nav class="navbar">
+  <div class="navbar-spacer"></div>
+  <button
+    mat-button
+    *ngIf="this.auth.isAuthenticated()"
+    (click)="this.auth.setAuthenticated(false)">Logout</button>
+</nav>

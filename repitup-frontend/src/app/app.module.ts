@@ -23,6 +23,7 @@ import { AuthService } from './auth.service';
 import { LoginComponent } from './login/login.component';
 
 import { MainModule } from "./main/main.module";
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MainModule } from "./main/main.module";
     EntrepreneurComponent,
     KvkIdentityWidgetComponent,
     ActivityDialogComponent,
-    LoginComponent
+    LoginComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
