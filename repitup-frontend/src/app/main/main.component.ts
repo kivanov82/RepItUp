@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { environment } from '../../environments/environment';
+import { Component, NgZone, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-main',
@@ -9,19 +8,25 @@ import { environment } from '../../environments/environment';
 })
 export class MainComponent implements OnInit {
 
-  // Component Visibility
+  public authenticated = false;
   public isCivil;
   public isMunicipality;
   public isEntrepreneur;
 
-  kvkQuestionId = environment.kvk.questionId;
-
-  constructor() { }
+  constructor(private zone: NgZone, public auth: AuthService) {
+    this.authenticated = this.auth.isAuthenticated();
+  }
 
   ngOnInit() {
     this.isCivil = true;
     this.isMunicipality = false;
     this.isEntrepreneur = false;
+
+    this.auth.authUpdate.subscribe(() => {
+      this.zone.run(() => {
+        this.authenticated = this.auth.isAuthenticated();
+      });
+    })
   }
 
 }

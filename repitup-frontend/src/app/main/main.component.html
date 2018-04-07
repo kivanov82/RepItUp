@@ -1,13 +1,17 @@
-<app-kvk-identity-widget [questionId]="kvkQuestionId"></app-kvk-identity-widget>
-
-<div *ngIf="isMunicipality">
-  <app-municipality></app-municipality>
+<div *ngIf="!authenticated; else content">
+  <app-login></app-login>
 </div>
 
-<div *ngIf="isEntrepreneur">
-  <app-entrepreneur></app-entrepreneur>
-</div>
+<ng-template #content>
+  <div *ngIf="isMunicipality">
+    <app-municipality></app-municipality>
+  </div>
 
-<div *ngIf="isCivil">
-  <app-civil></app-civil>
-</div>
+  <div *ngIf="isEntrepreneur">
+    <app-entrepreneur></app-entrepreneur>
+  </div>
+
+  <div *ngIf="isCivil">
+    <app-civil></app-civil>
+  </div>
+</ng-template>

@@ -28,6 +28,8 @@ import { MatInputModule } from '@angular/material/input';
 import { KvkIdentityWidgetComponent } from './kvk-identity-widget/kvk-identity-widget.component';
 import { ActivityDialogComponent } from './activity-dialog/activity-dialog.component';
 import { ideaServiceProvider } from './idea.service.provider';
+import { AuthService } from './auth.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { ideaServiceProvider } from './idea.service.provider';
     CivilVoteFormComponent,
     EntrepreneurComponent,
     KvkIdentityWidgetComponent,
-    ActivityDialogComponent
+    ActivityDialogComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +61,7 @@ import { ideaServiceProvider } from './idea.service.provider';
     MatInputModule,
     MatCheckboxModule
   ],
-  providers: [ideaServiceProvider],
+  providers: [AuthService, ideaServiceProvider],
   entryComponents: [ActivityDialogComponent],
   bootstrap: [AppComponent]
 })
