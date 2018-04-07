@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-civil-idea',
@@ -11,6 +11,8 @@ export class CivilIdeaComponent {
   @Input() description: Number;
   @Input() numTokens: Number = 0;
   @Input() userBalance: Number = 0;
+
+  @Output() showFeasibility = new EventEmitter();
 
   constructor() { }
 

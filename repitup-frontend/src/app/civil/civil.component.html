@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="!popupRedirect">
   <div *ngIf="loading; else ideas">loading</div>
   <ng-template #ideas>
     <div class="civil-ideas">
@@ -6,10 +6,19 @@
         *ngIf="idea"
         [description]="idea.description"
         [numTokens]="100"
-        [userBalance]="5"></app-civil-idea>
+        [userBalance]="5"
+        (showFeasibility)="popupRedirect = true"></app-civil-idea>
 
-      <app-civil-idea [description]="mockDescription"></app-civil-idea>
-      <app-civil-idea [description]="mockDescription"></app-civil-idea>
+      <app-civil-idea
+        [description]="mockDescription"
+        (showFeasibility)="popupRedirect = true"></app-civil-idea>
+      <app-civil-idea
+        [description]="mockDescription"
+        (showFeasibility)="popupRedirect = true"></app-civil-idea>
     </div>
   </ng-template>
+</div>
+
+<div *ngIf="popupRedirect">
+  <app-feasibility-track></app-feasibility-track>
 </div>
