@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ContractsService } from '../contracts.service';
-import { BigNumber } from 'bignumber.js';
+
 
 @Component({
   selector: 'app-civil-idea',

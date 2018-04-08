@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
-import * as Web3 from 'web3';
+// import * as Web3 from 'web3';
+
+let Web3 = require('web3');
+
+import { BigNumber } from 'bignumber.js';
 
 import { AppSettings } from './config/AppSettings';
 
@@ -69,31 +73,31 @@ export class ContractsService {
         if(err != null) {
           reject(err);
         }
-        // console.log(result);
+
         resolve(_web3.fromWei(result));
-      });
+      }); 
     }) as Promise<number>;
   }
 
   
-
+  private bn: BigNumber = new BigNumber(1e-18);
   public async sendFunds(amount): Promise<boolean> {
     let account = await this.getAccount();
 
     return new Promise((resolve, reject) => {
       let _web3 = this._web3;
 
-      this._tokenContract.transfer.call(
-        AppSettings.CIVILIAN, 
-        amount, 
+      this._tokenContract.transfer(
+        AppSettings.MUNICIPALITY, 
+        0.01, 
 
         function (err, result) {
-        console.log("sendFunds::err -> "+err);
-        if(err != null) {
-          reject(err);
-        }
+          console.log("sendFunds::err -> "+err);
+          if(err != null) {
+            reject(err);
+          }
         
-        console.log("sendFunds::result -> "+result);
+          console.log("sendFunds::result -> "+result);
 
         resolve(_web3.fromWei(result));
       });
