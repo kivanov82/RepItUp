@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-// import * as Web3 from 'web3';
+import * as Web3 from 'web3';
 
-let Web3 = require('web3');
+// let Web3 = require('web3');
 
 import { BigNumber } from 'bignumber.js';
 
@@ -119,7 +119,7 @@ export class ContractsService {
   public async sendRewardFundsBackToCivilian(): Promise<boolean> {
     let account = await this.getAccount();
 
-    console.log("sending funds to Entrepreneur, amount: 1");
+    console.log("sending funds to back Civilian, amount: 4");
 
     return new Promise((resolve, reject) => {
       let _web3 = this._web3;
@@ -127,7 +127,7 @@ export class ContractsService {
       this._tokenContract.transfer(
         // 0x627306090abaB3A6e1400e9345bC60c78a8BEf57, // Municipality
         0xC5fdf4076b8F3A5357c5E395ab970B5B54098Fef, // Civilian
-        100, 
+        4, 
 
         function (err, result) {
           console.log("sendFunds::err -> "+err);
