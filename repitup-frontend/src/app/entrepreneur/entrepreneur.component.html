@@ -31,6 +31,7 @@
         </div>
       </mat-card-actions>
     </mat-card>
+    <h3 *ngIf="auth.user.isMunicipal()" class="success-message">Successfully published challenge!</h3>
   </div>
 </div>
 

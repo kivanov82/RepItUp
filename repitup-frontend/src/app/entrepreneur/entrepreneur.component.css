@@ -45,3 +45,7 @@ mat-card {
 .is-municipal .item:nth-child(3) {
   display: none;
 }
+
+.success-message {
+  text-align: center;
+}
