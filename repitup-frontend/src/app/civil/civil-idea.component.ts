@@ -12,6 +12,12 @@ export class CivilIdeaComponent {
   @Input() id: Number = 0;
   @Input() description: Number;
   @Input() numTokens: Number = 0;
+    get nT():number {
+        return this.balance;
+    }
+    set nT(theBar:number) {
+        this.numTokens = this.round(theBar, 18);
+    }
   @Input() userBalance: Number = 0;
   @Input() image: String = 'assets/challenge-placeholder.png';
   @Input() name: String = '';
@@ -40,7 +46,7 @@ ngOnInit() {
     this.cs = cs;
     cs.getUserBalance().then(balance => this.bar = balance);
 
-    cs.getEntrepreneurBalance().then(num => this.numTokens = num);
+    cs.getEntrepreneurBalance().then(num => this.numTokens = this.round(num, 18));
    }
 
 
