@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-feasibility-track',
   templateUrl: './feasibility-track.component.html',
   styleUrls: ['./feasibility-track.component.css']
 })
-export class FeasibilityTrackComponent implements OnInit {
+export class FeasibilityTrackComponent {
+
+  @Output() close = new EventEmitter();
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }
