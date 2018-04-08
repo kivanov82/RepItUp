@@ -18,7 +18,7 @@ export class CivilComponent implements OnInit {
   constructor(private ideaService: IdeaService) { }
 
   ngOnInit() {
-    this.ideaService.getIdea(1)
+    this.ideaService.getLastIdea()
       .subscribe((response) => {
         this.idea = response;
         this.loading = false;

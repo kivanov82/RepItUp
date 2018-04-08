@@ -10,4 +10,8 @@ export class IdeaService {
     return this.http.get(`${this.apiUrl}/idea/${id}`);
   }
 
+  getLastIdea() {
+    return this.http.get(`${this.apiUrl}/idea/getLast`);
+  }
+
 }
