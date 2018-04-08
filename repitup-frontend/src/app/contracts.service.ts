@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import * as Web3 from 'web3';
+// import * as Web3 from 'web3';
 
-// let Web3 = require('web3');
+let Web3 = require('web3');
 
 import { BigNumber } from 'bignumber.js';
 
@@ -28,12 +28,12 @@ export class ContractsService {
       this._web3 = new Web3(window.web3.currentProvider);
 
       if (this._web3.version.network !== '5777') {
-        alert('Please connect to the ETH (Ganache) network');
+        // alert('Please connect to the ETH (Ganache) network');
       }
     } else {
-      alert(
-        'Please use a dapp browser like mist or MetaMask plugin for chrome'
-      );
+      // alert(
+      //   'Please use a dapp browser like mist or MetaMask plugin for chrome'
+      // );
     }
 
     this._tokenContract = this._web3.eth.contract(tokenAbi).at(this._tokenContractAddress);
@@ -44,14 +44,14 @@ export class ContractsService {
       this._account = await new Promise((resolve, reject) => {
         this._web3.eth.getAccounts((err, accs) => {
           if (err != null) {
-            alert('There was an error fetching your accounts.');
+            // alert('There was an error fetching your accounts.');
             return;
           }
 
           if (accs.length === 0) {
-            alert(
-              'Couldn\'t get any accounts! Make sure your Ethereum client is configured correctly.'
-            );
+            // alert(
+            //   'Couldn\'t get any accounts! Make sure your Ethereum client is configured correctly.'
+            // );
             return;
           }
           resolve(accs[0]);
