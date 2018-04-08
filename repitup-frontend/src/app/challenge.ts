@@ -4,4 +4,5 @@ export class Challenge {
   squareMeters: string;
   image: string;
   by: string;
+  description: string;
 }
