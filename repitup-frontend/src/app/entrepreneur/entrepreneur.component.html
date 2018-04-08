@@ -1,4 +1,4 @@
-<div class="container" *ngIf="popupRedirect == false">
+<div [ngClass]="{ 'container': true, 'is-municipal': auth.user.isMunicipal() }" *ngIf="popupRedirect == false">
   <div *ngFor="let challenge of challenges" class="item">
     <mat-card>
       <img mat-card-image class="card-image" src="{{ challenge.image }}" alt="{{ challenge.title }}">

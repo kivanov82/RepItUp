@@ -40,3 +40,8 @@ mat-card {
   min-width: 300px;
   /*height: 400px;*/
 }
+
+.is-municipal .item:nth-child(2),
+.is-municipal .item:nth-child(3) {
+  display: none;
+}

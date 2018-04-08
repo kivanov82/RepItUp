@@ -16,7 +16,7 @@ export class EntrepreneurComponent implements OnInit {
   challenges = CHALLENGES;
   popupRedirect = false;
 
-  constructor(public dialog: MatDialog, public auth: AuthService) { console.log(auth.user.isMunicipal()); }
+  constructor(public dialog: MatDialog, public auth: AuthService) { }
 
   openDialog(): void {
     let dialogRef = this.dialog.open(ActivityDialogComponent, {
@@ -25,7 +25,6 @@ export class EntrepreneurComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
       this.popupRedirect = true;
     });
   }

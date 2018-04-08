@@ -15,6 +15,7 @@ body {
 }
 
 .item {
+  max-width: 500px;
   margin: 10px;
   flex: 1 1 calc(33% - 10px);
 }
