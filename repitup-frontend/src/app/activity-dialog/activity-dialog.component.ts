@@ -4,6 +4,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { DialogData } from './DialogData';
 import { AppSettings } from '../config/AppSettings';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-activity-dialog',
@@ -11,12 +12,12 @@ import { AppSettings } from '../config/AppSettings';
 })
 export class ActivityDialogComponent implements OnInit {
 
-  checkboxes = [ 
-    { value: "Legal Advices" }, 
-    { value: "Permits" }, 
-    { value: "Supply Chain" }, 
-    { value: "Public Funding" }, 
-    { value: "VC Funding" }, 
+  checkboxes = [
+    { value: "Legal Advices" },
+    { value: "Permits" },
+    { value: "Supply Chain" },
+    { value: "Public Funding" },
+    { value: "VC Funding" },
     { value: "Volunteers"}
   ];
 
@@ -29,7 +30,7 @@ export class ActivityDialogComponent implements OnInit {
   }
 
   onSubmit(postData: DialogData){
-    this._http.post('/idea/save', postData).subscribe(status=> console.log(JSON.stringify(status)));
+    this._http.post(`${environment.apiUrl}/idea/save`, postData).subscribe(status=> console.log(JSON.stringify(status)));
     this.dialogRef.close();
   }
 }
