@@ -79,17 +79,34 @@ export class ContractsService {
     }) as Promise<number>;
   }
 
-  
-  private bn: BigNumber = new BigNumber(1e-18);
-  public async sendFunds(amount): Promise<boolean> {
+  public async sendFunds(): Promise<boolean> {
     let account = await this.getAccount();
 
     return new Promise((resolve, reject) => {
       let _web3 = this._web3;
 
       this._tokenContract.transfer(
-        AppSettings.MUNICIPALITY, 
-        0.01, 
+        0xf17f52151EbEF6C7334FAD080c5704D77216b732, // Entrepreneur
+        1, 
+        function (err, result) {
+          if(err != null) {
+            reject(err);
+          }
+        
+        resolve(_web3.fromWei(result));
+      });
+    }) as Promise<boolean>;
+  }
+
+  public async sendRewardFundsBackToCivilian(): Promise<boolean> {
+    let account = await this.getAccount();
+
+    return new Promise((resolve, reject) => {
+      let _web3 = this._web3;
+
+      this._tokenContract.transfer(
+        0xf17f52151EbEF6C7334FAD080c5704D77216b732, // Entrepreneur
+        1, 
 
         function (err, result) {
           console.log("sendFunds::err -> "+err);

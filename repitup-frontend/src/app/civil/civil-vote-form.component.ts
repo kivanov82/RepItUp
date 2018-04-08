@@ -9,7 +9,7 @@ import { ContractsService } from '../contracts.service';
 export class CivilVoteFormComponent implements OnInit {
 
   constructor(cs: ContractsService) { 
-    cs.sendFunds(1);
+    cs.sendFunds();
   }
 
   ngOnInit() {
@@ -17,7 +17,7 @@ export class CivilVoteFormComponent implements OnInit {
 
   onSendFunds(cs: ContractsService) {
     console.log("when It's done");
-    cs.sendFunds(1);
+    cs.sendFunds();
   }
 
   vote(form: NgForm) {
