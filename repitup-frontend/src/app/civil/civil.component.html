@@ -34,5 +34,5 @@
 </div>
 
 <div *ngIf="popupRedirect">
-  <app-feasibility-track></app-feasibility-track>
+  <app-feasibility-track (close)="popupRedirect = false"></app-feasibility-track>
 </div>

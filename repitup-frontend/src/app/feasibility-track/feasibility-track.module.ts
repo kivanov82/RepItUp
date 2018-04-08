@@ -6,6 +6,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatButtonModule } from '@angular/material/button';
+
 
 import { FeasibilityTrackComponent } from './feasibility-track.component';
 
@@ -17,7 +19,8 @@ import { FeasibilityTrackComponent } from './feasibility-track.component';
     MatProgressBarModule,
     MatInputModule,
     MatFormFieldModule,
-    MatChipsModule
+    MatChipsModule,
+    MatButtonModule
   ],
   declarations: [FeasibilityTrackComponent],
   exports: [ FeasibilityTrackComponent ]
