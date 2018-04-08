@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-// import * as Web3 from 'web3';
+import * as Web3 from 'web3';
 
-let Web3 = require('web3');
+// let Web3 = require('web3');
 
 import { BigNumber } from 'bignumber.js';
 

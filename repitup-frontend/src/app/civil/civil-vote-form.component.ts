@@ -6,18 +6,22 @@ import { ContractsService } from '../contracts.service';
   selector: 'app-civil-vote-form',
   templateUrl: './civil-vote-form.component.html',
 })
+
+
 export class CivilVoteFormComponent implements OnInit {
 
-  constructor(cs: ContractsService) { 
-    cs.sendFunds();
+  contractService:ContractsService;
+
+  constructor(private cs: ContractsService) { 
+    this.contractService = cs;
   }
 
   ngOnInit() {
   }
 
   onSendFunds(cs: ContractsService) {
-    console.log("when It's done");
-    cs.sendFunds();
+    console.log("this.contractService -> "+this.contractService);
+    this.contractService.sendFunds();
   }
 
   vote(form: NgForm) {
