@@ -11,3 +11,7 @@
 .image {
   object-fit: cover;
 }
+
+.card-title {
+  font-size: 30px;
+}

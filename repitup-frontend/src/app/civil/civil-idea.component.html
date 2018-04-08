@@ -1,12 +1,13 @@
 <mat-card class="civil-idea">
   <img mat-card-image (click)="onImageClick()" width="430" height="208px" src="{{ image }}" class="image">
   <mat-card-header>
-    <mat-card-title>{{ name }}</mat-card-title>
+    <mat-card-title class="card-title">{{ name }}</mat-card-title>
     <mat-card-subtitle>Voorstreek 55, Leeuwarden</mat-card-subtitle>
     <mat-card-subtitle>by: {{ submitter }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <p>{{ description }}</p>
+
     <div class="actions">
       <button mat-button color="primary" (click)="showFeasibility.emit()">read more</button>
     </div>
