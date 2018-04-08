@@ -25,7 +25,7 @@ export class CivilIdeaComponent {
 
   @Output() showFeasibility = new EventEmitter();
 
-// user updatge fields
+// user updatge
 
   cs:ContractsService;
 
@@ -47,6 +47,7 @@ ngOnInit() {
   constructor(cs: ContractsService) { 
     this.cs = cs;
     cs.getUserBalance().then(balance => this.bar = balance);
+
     cs.getEntrepreneurBalance().then(num => this.numTokens = this.round(num, 18));
    }
 
