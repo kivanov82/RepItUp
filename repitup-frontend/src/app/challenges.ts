@@ -3,10 +3,10 @@ import { Challenge } from './challenge';
 export const CHALLENGES: Challenge[] = [
   {
     title: "Lorem ipsum dolor amet",
-    subtitle: 'Hoestraat 10, Den Haag',
+    subtitle: 'Voorstreek 55, Leeuwarden',
     squareMeters: "300",
     image: "assets/challenge-placeholder-3.png",
-    by: "Nick Brides"
+    by: "Bruisende Binnenstad"
   },
   {
     title: "In sint paleo",
