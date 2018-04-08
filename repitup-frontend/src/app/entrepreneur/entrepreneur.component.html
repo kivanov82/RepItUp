@@ -1,7 +1,7 @@
 <div class="container" *ngIf="popupRedirect == false">
   <div *ngFor="let challenge of challenges" class="item">
     <mat-card>
-      <img mat-card-image class="" src="{{ challenge.image }}" alt="{{ challenge.title }}">
+      <img mat-card-image class="card-image" src="{{ challenge.image }}" alt="{{ challenge.title }}">
       <mat-card-header>
         <mat-card-title-group>
           <mat-card-title class="card-title">{{ challenge.title }}<br/> <span class="card-title-address"><i class="fas fa-map-marker-alt text-red"></i> {{ challenge.subtitle }}</span></mat-card-title>

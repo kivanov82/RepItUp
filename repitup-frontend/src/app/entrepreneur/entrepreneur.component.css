@@ -8,8 +8,9 @@ mat-card {
   justify-content: space-around;
 }
 
-.card-image { 
+.card-image {
   max-height:250px;
+  object-fit: cover;
 }
 
 .card-title {
