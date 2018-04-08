@@ -65,11 +65,11 @@ export class ContractsService {
   }
 
   public async getUserBalance(): Promise<number> {
-    let account = await this.getAccount();
+    // let account = await this.getAccount();
 
     return new Promise((resolve, reject) => {
       let _web3 = this._web3;
-      this._tokenContract.balanceOf.call(AppSettings.CIVILIAN, function (err, result) {
+      this._tokenContract.balanceOf.call(0xC5fdf4076b8F3A5357c5E395ab970B5B54098Fef, function (err, result) {
         if(err != null) {
           reject(err);
         }
@@ -78,6 +78,22 @@ export class ContractsService {
       }); 
     }) as Promise<number>;
   }
+
+  public async getEntrepreneurBalance(): Promise<number> {
+    // let account = await this.getAccount();
+    
+    return new Promise((resolve, reject) => {
+      let _web3 = this._web3;
+      this._tokenContract.balanceOf.call(0xf17f52151EbEF6C7334FAD080c5704D77216b732, function (err, result) {
+        if(err != null) {
+          reject(err);
+        }
+
+        resolve(_web3.fromWei(result));
+      }); 
+    }) as Promise<number>;
+  }
+
 
   public async sendFunds(): Promise<boolean> {
     let account = await this.getAccount();
@@ -105,8 +121,9 @@ export class ContractsService {
       let _web3 = this._web3;
 
       this._tokenContract.transfer(
-        0xf17f52151EbEF6C7334FAD080c5704D77216b732, // Entrepreneur
-        1, 
+        // 0x627306090abaB3A6e1400e9345bC60c78a8BEf57, // Municipality
+        0xC5fdf4076b8F3A5357c5E395ab970B5B54098Fef, // Civilian
+        100, 
 
         function (err, result) {
           console.log("sendFunds::err -> "+err);

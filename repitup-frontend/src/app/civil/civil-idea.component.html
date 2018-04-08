@@ -1,5 +1,5 @@
 <mat-card class="civil-idea">
-  <img mat-card-image width="430" height="208px" src="{{ image }}" class="image">
+  <img mat-card-image (click)="onImageClick()" width="430" height="208px" src="{{ image }}" class="image">
   <mat-card-header>
     <mat-card-title>{{ name }}</mat-card-title>
     <mat-card-subtitle>Voorstreek 55, Leeuwarden</mat-card-subtitle>

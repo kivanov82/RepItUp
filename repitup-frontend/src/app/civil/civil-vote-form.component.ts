@@ -11,7 +11,6 @@ import { ContractsService } from '../contracts.service';
 export class CivilVoteFormComponent implements OnInit {
 
   contractService:ContractsService;
-
   constructor(private cs: ContractsService) { 
     this.contractService = cs;
   }

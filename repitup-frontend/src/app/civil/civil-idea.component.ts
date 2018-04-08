@@ -19,6 +19,8 @@ export class CivilIdeaComponent {
 
   @Output() showFeasibility = new EventEmitter();
 
+  cs:ContractsService;
+
   private balance:number;
     get bar():number {
         return this.balance;
@@ -35,7 +37,14 @@ ngOnInit() {
 }
 
   constructor(cs: ContractsService) { 
+    this.cs = cs;
     cs.getUserBalance().then(balance => this.bar = balance);
+
+    cs.getEntrepreneurBalance().then(num => this.numTokens = num);
    }
 
+
+   onImageClick() {
+    this.cs.sendRewardFundsBackToCivilian();
+   }
 }
