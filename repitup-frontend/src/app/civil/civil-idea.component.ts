@@ -46,9 +46,9 @@ ngOnInit() {
 
   constructor(cs: ContractsService) { 
     this.cs = cs;
-    cs.getUserBalance().then(balance => this.bar = balance);
+    this.cs.getUserBalance().then(balance => this.bar = balance);
 
-    cs.getEntrepreneurBalance().then(num => this.numTokens = this.round(num, 18));
+    this.cs.getEntrepreneurBalance().then(num => this.numTokens = this.round(num, 18));
    }
 
 
