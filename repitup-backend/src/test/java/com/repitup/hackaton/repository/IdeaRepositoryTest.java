@@ -30,11 +30,12 @@ public class IdeaRepositoryTest {
 
     @Test
     public void testIdeaSave() {
-        Idea idea = new Idea("description", "name" , new HashSet<Need>());
+        Idea idea = new Idea("description", "name" , new HashSet<Need>(), "assumption");
         entityManager.persist(idea);
         entityManager.flush();
         Idea one = ideaRepository.findOne(1L);
         assertEquals(one.getDescription(), idea.getDescription());
+        assertEquals(one.getAssumption(), idea.getAssumption());
     }
 
 
