@@ -35,10 +35,11 @@ public class Idea extends DataBaseObject {
 
     }
 
-    public Idea(String description, String name, Set<Need> needs) {
+    public Idea(String description, String name, Set<Need> needs, String assumption) {
         this.description = description;
         this.name = name;
         this.needs = needs;
+        this.assumption = assumption;
     }
 
     public String getDescription() {
