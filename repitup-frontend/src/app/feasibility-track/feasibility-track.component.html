@@ -4,6 +4,9 @@
   fxFlexFill >
 
   <mat-card class="feasibility-card">
+    <button mat-button class="close-button"
+      (click)="close.emit()"><i class="fas fa-times"></i></button>
+
     <div class="feasibility-content">
       <h1>Feasibility Track</h1>
       <h2>Recycled Furniture</h2>
@@ -73,7 +76,7 @@
               </mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat.</p>
+              <p>Dear Sir/Madam, we gladly want to assist you, could you please describe your problem? </p>
             </mat-card-content>
           </mat-card>
         </li>

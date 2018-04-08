@@ -6,7 +6,8 @@
         *ngIf="idea"
         [name]="idea.name"
         [description]="idea.description"
-         submitter="New School Furniture"
+        submitter="New School Furniture"
+        image="assets/idea-placeholder-3.png"
         [numTokens]="100"
         [userBalance]="5"
         (showFeasibility)="popupRedirect = true"></app-civil-idea>
@@ -28,10 +29,10 @@
         submitter="Chef Mario"
         (showFeasibility)="popupRedirect = true"></app-civil-idea>
     </div>
-    
+
   </ng-template>
 </div>
 
 <div *ngIf="popupRedirect">
-  <app-feasibility-track></app-feasibility-track>
+  <app-feasibility-track (close)="popupRedirect = false"></app-feasibility-track>
 </div>
