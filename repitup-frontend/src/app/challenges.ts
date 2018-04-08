@@ -3,4 +3,4 @@ import * as challengeSeed from './challengeSeed.json';
 
 export const CHALLENGES: Challenge[] = [];
 
-challengeSeed.forEach(challenge => CHALLENGES.push(challenge));
+Array.prototype.forEach.call(challengeSeed, challenge => CHALLENGES.push(challenge));
