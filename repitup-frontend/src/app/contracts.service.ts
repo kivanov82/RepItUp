@@ -98,6 +98,8 @@ export class ContractsService {
   public async sendFunds(): Promise<boolean> {
     let account = await this.getAccount();
 
+    console.log("sending funds to Entrepreneur, amount: 1");
+    
     return new Promise((resolve, reject) => {
       let _web3 = this._web3;
 
@@ -116,6 +118,8 @@ export class ContractsService {
 
   public async sendRewardFundsBackToCivilian(): Promise<boolean> {
     let account = await this.getAccount();
+
+    console.log("sending funds to Entrepreneur, amount: 1");
 
     return new Promise((resolve, reject) => {
       let _web3 = this._web3;
